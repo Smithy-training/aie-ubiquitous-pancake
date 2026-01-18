@@ -1,0 +1,16 @@
+{
+  "ds1": {
+    "model": "KMeans",
+    "n_clusters": 2
+  },
+  "ds2": {
+    "model": "Agglomerative",
+    "n_clusters": 2,
+    "linkage": "average"
+  },
+  "ds3": {
+    "model": "Agglomerative",
+    "n_clusters": 2,
+    "linkage": "average"
+  }
+}

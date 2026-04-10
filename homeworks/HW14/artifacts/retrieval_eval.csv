@@ -1,0 +1,11 @@
+query,expected_source,retrieved_sources,hit_at_k,rank_of_first_relevant
+How to improve SEO ranking?,Doc_2,Doc_2; Doc_1; Doc_15,1,1
+What is content marketing?,Doc_3,Doc_3; Doc_2; Doc_1,1,1
+How to set up Yandex.Direct ads?,Doc_4,Doc_10; Doc_4; Doc_2,1,2
+How to use social media for business?,Doc_5,Doc_3; Doc_2; Doc_1,0,-1
+What is email marketing automation?,Doc_6,Doc_6; Doc_1; Doc_3,1,1
+How to analyze campaign effectiveness?,Doc_7,Doc_3; Doc_2; Doc_1,0,-1
+What is a sales funnel?,Doc_8,Doc_3; Doc_2; Doc_1,0,-1
+How to create a converting landing page?,Doc_9,Doc_3; Doc_2; Doc_1,0,-1
+How to configure targeted advertising?,Doc_10,Doc_3; Doc_2; Doc_1,0,-1
+What is digital marketing strategy?,Doc_1,Doc_3; Doc_2; Doc_1,1,3

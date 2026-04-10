@@ -1,0 +1,4 @@
+query,before_retrieved_sources,after_retrieved_sources,changed
+What is influencer marketing?,Doc_3; Doc_2; Doc_1,Doc_3; Doc_2; Doc_1,False
+How does cross-channel analytics work?,Doc_13; Doc_7; Doc_15,Doc_13; Doc_12; Doc_7,True
+How to improve website conversion rate?,Doc_3; Doc_2; Doc_1,Doc_3; Doc_2; Doc_1,False

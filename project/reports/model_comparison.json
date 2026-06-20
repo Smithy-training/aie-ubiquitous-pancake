@@ -1,0 +1,25 @@
+{
+  "dataset": "synthetic-pricing-v1-seed-42",
+  "rows": 1000,
+  "train_rows": 800,
+  "test_rows": 200,
+  "random_state": 42,
+  "metrics": {
+    "DummyRegressor": {
+      "mae": 11.0784,
+      "rmse": 13.4425
+    },
+    "LinearRegression": {
+      "mae": 2.9439,
+      "rmse": 3.8456
+    },
+    "DecisionTreeRegressor": {
+      "mae": 2.8489,
+      "rmse": 3.6965
+    },
+    "RandomForestRegressor": {
+      "mae": 2.324,
+      "rmse": 2.957
+    }
+  }
+}

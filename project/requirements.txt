@@ -1,0 +1,9 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic-settings==2.7.1
+python-dotenv==1.2.2
+PyYAML==6.0.2
+structlog==24.4.0
+prometheus-client==0.21.1
+numpy==2.2.6
+scikit-learn==1.6.1

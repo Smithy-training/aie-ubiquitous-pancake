@@ -1,0 +1,14 @@
+app:
+  name: "ai-pricing-service"
+  version: "1.0.0"
+  host: "0.0.0.0"
+  port: 8000
+  env: "production"
+api:
+  version: "v1"
+ml:
+  model_path: "./artifacts/model_v1.pkl"
+  scaler_path: "./artifacts/scaler_v1.pkl"
+  metadata_path: "./artifacts/model_metadata.json"
+  model_version: "v1"
+  min_confidence_threshold: 0.6

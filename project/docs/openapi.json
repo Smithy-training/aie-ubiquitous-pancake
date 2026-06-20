@@ -1,0 +1,899 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ai-pricing-service",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "health"
+        ],
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health/live": {
+      "get": {
+        "tags": [
+          "health"
+        ],
+        "summary": "Live",
+        "operationId": "live_health_live_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LiveResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "tags": [
+          "health"
+        ],
+        "summary": "Ready",
+        "operationId": "ready_health_ready_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReadyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predict": {
+      "post": {
+        "tags": [
+          "prediction"
+        ],
+        "summary": "Predict Compat",
+        "operationId": "predict_compat_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PredictRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/predict": {
+      "post": {
+        "tags": [
+          "prediction"
+        ],
+        "summary": "Predict",
+        "operationId": "predict_v1_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PredictRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/batch-predict": {
+      "post": {
+        "tags": [
+          "prediction"
+        ],
+        "summary": "Batch Predict",
+        "operationId": "batch_predict_v1_batch_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchPredictRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BatchPredictResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/explain": {
+      "post": {
+        "tags": [
+          "prediction"
+        ],
+        "summary": "Explain",
+        "operationId": "explain_v1_explain_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PredictRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExplainResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/predictions/recent": {
+      "get": {
+        "tags": [
+          "prediction"
+        ],
+        "summary": "Recent Predictions",
+        "operationId": "recent_predictions_v1_predictions_recent_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictionHistoryResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/model/info": {
+      "get": {
+        "tags": [
+          "model"
+        ],
+        "summary": "Model Info",
+        "operationId": "model_info_v1_model_info_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelInfoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/version": {
+      "get": {
+        "tags": [
+          "version"
+        ],
+        "summary": "Version",
+        "operationId": "version_version_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VersionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BatchPredictItemResponse": {
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "title": "Request Id"
+          },
+          "product_id": {
+            "type": "string",
+            "title": "Product Id"
+          },
+          "predicted_demand_units": {
+            "type": "integer",
+            "title": "Predicted Demand Units"
+          },
+          "recommended_price": {
+            "type": "number",
+            "title": "Recommended Price"
+          },
+          "confidence_score": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence Score"
+          },
+          "status": {
+            "type": "string",
+            "const": "success",
+            "title": "Status"
+          },
+          "warning": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Warning"
+          },
+          "item_id": {
+            "type": "integer",
+            "title": "Item Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_id",
+          "product_id",
+          "predicted_demand_units",
+          "recommended_price",
+          "confidence_score",
+          "status",
+          "item_id"
+        ],
+        "title": "BatchPredictItemResponse"
+      },
+      "BatchPredictRequest": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/PredictRequest"
+            },
+            "type": "array",
+            "maxItems": 50,
+            "minItems": 1,
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "BatchPredictRequest"
+      },
+      "BatchPredictResponse": {
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "title": "Request Id"
+          },
+          "status": {
+            "type": "string",
+            "const": "success",
+            "title": "Status"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/BatchPredictItemResponse"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_id",
+          "status",
+          "items"
+        ],
+        "title": "BatchPredictResponse"
+      },
+      "ExplainResponse": {
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "title": "Request Id"
+          },
+          "prediction": {
+            "$ref": "#/components/schemas/PredictResponse"
+          },
+          "explanations": {
+            "items": {
+              "$ref": "#/components/schemas/ExplanationItem"
+            },
+            "type": "array",
+            "title": "Explanations"
+          },
+          "model_note": {
+            "type": "string",
+            "title": "Model Note"
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_id",
+          "prediction",
+          "explanations",
+          "model_note"
+        ],
+        "title": "ExplainResponse"
+      },
+      "ExplanationItem": {
+        "properties": {
+          "feature": {
+            "type": "string",
+            "title": "Feature"
+          },
+          "effect": {
+            "type": "string",
+            "enum": [
+              "positive",
+              "negative",
+              "neutral"
+            ],
+            "title": "Effect"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "feature",
+          "effect",
+          "message"
+        ],
+        "title": "ExplanationItem"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "service_version": {
+            "type": "string",
+            "title": "Service Version"
+          },
+          "api_version": {
+            "type": "string",
+            "title": "Api Version"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "service_version",
+          "api_version"
+        ],
+        "title": "HealthResponse"
+      },
+      "LiveResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "alive",
+            "title": "Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "LiveResponse"
+      },
+      "ModelInfoResponse": {
+        "properties": {
+          "model_loaded": {
+            "type": "boolean",
+            "title": "Model Loaded"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "contract_features": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Contract Features"
+          },
+          "contract_target": {
+            "type": "string",
+            "title": "Contract Target"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ModelMetadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_loaded",
+          "model_version",
+          "contract_features",
+          "contract_target",
+          "metadata"
+        ],
+        "title": "ModelInfoResponse"
+      },
+      "ModelMetadata": {
+        "properties": {
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "model_type": {
+            "type": "string",
+            "title": "Model Type"
+          },
+          "trained_at": {
+            "type": "string",
+            "title": "Trained At"
+          },
+          "dataset_version": {
+            "type": "string",
+            "title": "Dataset Version"
+          },
+          "training_rows": {
+            "type": "integer",
+            "title": "Training Rows"
+          },
+          "training_target_mean": {
+            "type": "number",
+            "title": "Training Target Mean"
+          },
+          "features": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Features"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target"
+          },
+          "metrics": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Metrics"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_version",
+          "model_type",
+          "trained_at",
+          "dataset_version",
+          "training_rows",
+          "training_target_mean",
+          "features",
+          "target",
+          "metrics"
+        ],
+        "title": "ModelMetadata"
+      },
+      "PredictRequest": {
+        "properties": {
+          "product_id": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Product Id",
+            "examples": [
+              "ELEC-100500"
+            ]
+          },
+          "horizon_days": {
+            "type": "integer",
+            "maximum": 14.0,
+            "minimum": 1.0,
+            "title": "Horizon Days",
+            "examples": [
+              3
+            ]
+          },
+          "current_base_price": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Current Base Price",
+            "examples": [
+              1500.0
+            ]
+          },
+          "is_weekend": {
+            "type": "boolean",
+            "title": "Is Weekend",
+            "default": false,
+            "examples": [
+              true
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "product_id",
+          "horizon_days",
+          "current_base_price"
+        ],
+        "title": "PredictRequest"
+      },
+      "PredictResponse": {
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "title": "Request Id"
+          },
+          "product_id": {
+            "type": "string",
+            "title": "Product Id"
+          },
+          "predicted_demand_units": {
+            "type": "integer",
+            "title": "Predicted Demand Units"
+          },
+          "recommended_price": {
+            "type": "number",
+            "title": "Recommended Price"
+          },
+          "confidence_score": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence Score"
+          },
+          "status": {
+            "type": "string",
+            "const": "success",
+            "title": "Status"
+          },
+          "warning": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Warning"
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_id",
+          "product_id",
+          "predicted_demand_units",
+          "recommended_price",
+          "confidence_score",
+          "status"
+        ],
+        "title": "PredictResponse"
+      },
+      "PredictionHistoryItem": {
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "title": "Request Id"
+          },
+          "product_id": {
+            "type": "string",
+            "title": "Product Id"
+          },
+          "horizon_days": {
+            "type": "integer",
+            "title": "Horizon Days"
+          },
+          "current_base_price": {
+            "type": "number",
+            "title": "Current Base Price"
+          },
+          "is_weekend": {
+            "type": "boolean",
+            "title": "Is Weekend"
+          },
+          "predicted_demand_units": {
+            "type": "integer",
+            "title": "Predicted Demand Units"
+          },
+          "recommended_price": {
+            "type": "number",
+            "title": "Recommended Price"
+          },
+          "confidence_score": {
+            "type": "number",
+            "title": "Confidence Score"
+          },
+          "warning": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Warning"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_id",
+          "product_id",
+          "horizon_days",
+          "current_base_price",
+          "is_weekend",
+          "predicted_demand_units",
+          "recommended_price",
+          "confidence_score",
+          "created_at"
+        ],
+        "title": "PredictionHistoryItem"
+      },
+      "PredictionHistoryResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/PredictionHistoryItem"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "PredictionHistoryResponse"
+      },
+      "ReadyResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ready",
+            "title": "Status"
+          },
+          "model_loaded": {
+            "type": "boolean",
+            "title": "Model Loaded"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ModelMetadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "model_loaded",
+          "model_version",
+          "metadata"
+        ],
+        "title": "ReadyResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VersionResponse": {
+        "properties": {
+          "service_name": {
+            "type": "string",
+            "title": "Service Name"
+          },
+          "service_version": {
+            "type": "string",
+            "title": "Service Version"
+          },
+          "api_version": {
+            "type": "string",
+            "title": "Api Version"
+          },
+          "model_loaded": {
+            "type": "boolean",
+            "title": "Model Loaded"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "model_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Type"
+          },
+          "dataset_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dataset Version"
+          }
+        },
+        "type": "object",
+        "required": [
+          "service_name",
+          "service_version",
+          "api_version",
+          "model_loaded",
+          "model_version"
+        ],
+        "title": "VersionResponse"
+      }
+    }
+  }
+}
